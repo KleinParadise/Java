@@ -34,3 +34,18 @@
       4. 现 MethodInterceptor接口，用来处理 对代理类上所有方法的请求（这个接口和JDK动态代理InvocationHandler的功能和角色是一样的）
 
 
+- ProxyFactoryBean
+  - 从ProxyFactoryBean获得代理对象需要提供的信息
+    1.Proxy应该感兴趣的Adivce列表
+    2.真正的实例对象引用
+    3.告诉ProxyFactoryBean使用基于接口实现的JDK动态代理机制实现proxy
+    4.Proxy应该具备的Interface接口
+
+
+- Advice的执行顺序实现
+  - ReflectiveMethodInvocation 维护一个Advice的List
+    - 对该List递归调用实现对其顺序控制
+
+- Adivce的条件执行(加入过滤器)
+  -  MethodMatcher 
+
