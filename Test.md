@@ -65,7 +65,33 @@
     相对于基本的BeanFactory，ApplicationContext 唯一的不足是占用内存空间。当应用程序配置Bean较多时，程序启动较慢。
        
   - BeanFactory通常以编程的方式被创建，ApplicationContext还能以声明的方式创建，如使用ContextLoader
-  - BeanFactory和ApplicationContext都支持BeanPostProcessor、BeanFactoryPostProcessor的使用，但两者之间的区别是：BeanFactory需要手动注册，而ApplicationContext则是自动注册。
+  - BeanFactory和ApplicationContext都支持BeanPostProcessor、BeanFactoryPostProcessor的使用，但两者之间的区别是：  
+      若使用BeanFactory，则必须要显示的调用其addBeanPostProcessor()方法进行手动注册，参数为BeanPostProcessor实现类的实例    
+      如果是使用ApplicationContext，那么容器会在配置文件在中自动寻找实现了BeanPostProcessor接口的Bean，然后自动注册，我们要做的只是配置一个BeanPostProcessor实现类的Bean就可以了。
+
+
+- BeanPostProcessor与BeanFactoryPostProcessor的区别
+  - 定义
+    - BeanPostProcessor接口定义了一个你可以自己实现的回调方法，在Spring完成对象实例化、配置、初始化之后实现自己的业务逻辑，可配置一个或多个BeanPostProcessor实例,实现Ordered接口,设置order属       性就可以确定不同实现类的处理顺序  
+    - BeanFactoryPostProcessor可以对bean的定义（配置元数据）进行处理。即Spring IoC容器允许BeanFactoryPostProcessor在容器实际实例化任何其它的bean之前读取配置元数据，并有可能修改它。  
+      可以配置多个BeanFactoryPostProcessor,还能通过设置'order'属性来控制BeanFactoryPostProcessor的执行次序。
+  - 区别
+    - BeanFactoryPostProcessor通过beanFactory可以获取bean的示例或定义,同时可以修改bean的属性，这是与BeanPostProcessor最大的区别
+    - BeanFactoryPostProcessor的回调比BeanPostProcessor要早
+    
+    
+- spring bean 的生命周期
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 
