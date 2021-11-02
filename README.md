@@ -35,6 +35,12 @@ https://github.com/souyunku/DevBooks/blob/master/docs/Java/Java%E6%9C%80%E6%96%B
 java的书  
 https://segmentfault.com/a/1190000023912880  
 
+讲课  
+http://learn.lianglianglee.com/  
+
+美团关于缓存  
+https://tech.meituan.com/2017/03/17/cache-about.html  
+
 
 
 
